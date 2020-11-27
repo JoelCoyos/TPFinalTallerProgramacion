@@ -7,9 +7,11 @@ import Excepciones.DomicilioRepetidoException;
 import Factory.DomicilioFactory;
 
 /**
- * @author Grupo 10
+ * @author Taller1
  * 
  * Esta clase representa los titulares de la Empresa, los cuales pueden ser de tipo Fisico o Juridico.
+ * la clase mantiene un array (domicilios) con los domicilios asociados al Titular.
+ * 
  */
 public abstract class Titular implements Cloneable {
 	private static int nroActual = 0;
@@ -19,30 +21,67 @@ public abstract class Titular implements Cloneable {
 	protected String tipoDePago;
 	protected ArrayList<Domicilio> domicilios = new ArrayList<Domicilio>();
 
-	public Titular(String nombre, int dni, String tipoDePago) {
+    /**
+     *      Crea un titular asignando los siguientes atributos:
+     * @param nombre : String nombre del titular (no valida)
+     * @param dni : Entero con el DNI (no valida)
+     * @param tipoDePago : String con el tipoDePago (no valida)
+     * Adicionalmente asigna un n√∫mero de Identacion correlativo (nroIdentacion)
+     * este comienza desde cero.
+     */
+        
+    public Titular(String nombre, int dni, String tipoDePago) {
 		this.nombre = nombre;
 		this.dni = dni;
 		this.tipoDePago = tipoDePago;
 		this.nroIdentacion = nroActual++;
 	}
 
-	public int getNroIdentacion() {
+    /**
+     *
+     * @return
+     * devuelve el numero de identaci√≥n
+     */
+    
+    public int getNroIdentacion() {
 		return nroIdentacion;
 	}
 
-	public String getNombre() {
+    /**
+     *
+     * @return
+     * devuelve el nombre
+     */
+    public String getNombre() {
 		return nombre;
 	}
 
-	public int getDni() {
+    /**
+     *
+     * @return
+     * devuelve el DNI
+     */
+    public int getDni() {
 		return dni;
 	}
 
-	public String getTipoDePago() {
+    /**
+     *
+     * @return
+     * devuelve el tipo de pago.
+     */
+    
+    public String getTipoDePago() {
 		return tipoDePago;
 	}
 
-	public ArrayList<Domicilio> getDomicilios() {
+    /**
+     *
+     * @return
+     * retorna el arreglo de domicilios;
+     */
+    
+    public ArrayList<Domicilio> getDomicilios() {
 		return domicilios;
 	}
 	
@@ -67,7 +106,7 @@ public abstract class Titular implements Cloneable {
 	 * <b>pre:</b> El titular existe (no es null). <br>
 	 * <b>post:</b> Se agrega un domicilio o se muestra por pantalla que es repetido si es el caso. <br>
 	 * 
-	 * @param direccion Es la direccion a la cual se contratar· el servicio, tiene que ser !=null o !=""
+	 * @param direccion Es la direccion a la cual se contratar√° el servicio, tiene que ser !=null o !=""
 	 * @param internet Es el tipo de servicio, debe ser "Internet100" o "Internet500".
 	 * @param celular Es un booleano que indica si contrata Celular.
 	 * @param telFijo Es un booleano que indica si contrata Telefono Fijo.
@@ -112,7 +151,7 @@ public abstract class Titular implements Cloneable {
 	public void imprimirFactura() {
 		Iterator<Domicilio> it = this.getDomicilios().iterator();
 		System.out.println("*************************************** FACTURA ***************************************");
-		System.out.println("Cliente N∞:" + this.nroIdentacion);
+		System.out.println("Cliente Nro:" + this.nroIdentacion);
 		System.out.println("Titular:" + this.getNombre());
 		System.out.println("DNI:" + this.getDni());
 		System.out.println("Tipo:" + this.getTipo());

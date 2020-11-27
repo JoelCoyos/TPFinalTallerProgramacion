@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
- * @author Grupo 10
+ * @author Taller1
  * 
  * Clase que representa la Empresa que contiene todos los titulares con sus contrataciones.
+ * los contiene en un ArrayList Titulares.
  */
+
 public class Empresa {
 	private static Empresa instance = null;
 	private ArrayList<Titular> titulares = new ArrayList<Titular>();
@@ -26,7 +28,13 @@ public class Empresa {
 		return instance;
 	}
 
-	public ArrayList<Titular> getTitualares() {
+    /**
+     *
+     * @return
+     * retorna el array con los titulares.
+     */
+        
+    public ArrayList<Titular> getTitualares() {
 		return titulares;
 	}
 	
@@ -34,9 +42,9 @@ public class Empresa {
 	 * Este metodo permite agregar un titular a la empresa. <br>
 	 * 
 	 * <b>pre:</b> La empresa existe (no es null). <br>
-	 * <b>post:</b> Se aÒade un nuevo titular al ArrayList. <br>
+	 * <b>post:</b> Se a√±ade un nuevo titular al ArrayList. <br>
 	 * 
-	 * @param titular Es el titular que ser· agregado, este no debe ser null
+	 * @param titular Es el titular que ser√° agregado, este no debe ser null
 	 */
 	public void addTitular(Titular titular) {
 		this.titulares.add(titular);

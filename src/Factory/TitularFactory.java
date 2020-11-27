@@ -5,10 +5,11 @@ import Modelo.TitularFisico;
 import Modelo.TitularJuridico;
 
 /**
- * @author Grupo 10
+ * @author Taller1
  * 
  * Esta clase se encarga de instanciar los titulares de la empresa.
  */
+
 public class TitularFactory {
 	
 	/**
@@ -22,7 +23,7 @@ public class TitularFactory {
 	 * @param dni Es el dni del titular, debe ser positivo.
 	 * @param tipoDePago Es el tipo de pago, podra ser "Efectivo", "Cheque" o "Tarjeta".
 	 * 
-	 * @return Retorna el titular que será agregado a la empresa.
+	 * @return Retorna el titular que serï¿½ agregado a la empresa.
 	 */
 	public static Titular getTitular(String tipo, String nombre, int dni, String tipoDePago) {
 		Titular respuesta = null;

@@ -3,7 +3,7 @@ package Modelo;
 import java.util.ArrayList;
 
 /**
- * @author Grupo 10
+ * @author Taller1
  * 
  * Esta clase representa los titulares de tipo fisico en la empresa.
  *
@@ -41,7 +41,7 @@ public class TitularFisico extends Titular {
 	 * Este metodo permite hacer visible la accion de clonar un titular fisico. <br>
 	 * 
 	 * <b>pre:</b> El titular existe (no es null). <br>
-	 * <b>post:</b> El titular siempre ser· clonado con exito. <br>
+	 * <b>post:</b> El titular siempre ser√° clonado con exito. <br>
 	 */
 	@SuppressWarnings("unchecked")
 	@Override

@@ -1,7 +1,7 @@
 package Modelo;
 
 /**
- * @author Grupo 10
+ * @author Taller1
  * 
  * Esta clase representa los titulares de tipo juridico en la empresa.
  *

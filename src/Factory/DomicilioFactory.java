@@ -15,7 +15,7 @@ import Modelo.Internet500;
 import Modelo.Titular;
 
 /**
- * @author Grupo 10
+ * @author Taller1
  * 
  * Esta clase se encarga de instanciar los domicilios de los titulares.
  */
@@ -27,13 +27,13 @@ public class DomicilioFactory {
 	 * <b>pre:</b> El titular del domicilio existe (no es null). <br>
 	 * <b>post:</b> El titular tiene un nuevo domicilio con su contrato. <br>
 	 * 
-	 * @param direccion Es la direccion a la cual se contratará el servicio, tiene que ser !=null o !=""
+	 * @param direccion Es la direccion a la cual se contratarï¿½ el servicio, tiene que ser !=null o !=""
 	 * @param internet Es el tipo de servicio, debe ser "Internet100" o "Internet500".
 	 * @param celular Es un booleano que indica si contrata Celular.
 	 * @param telFijo Es un booleano que indica si contrata Telefono Fijo.
 	 * @param tv Es un booleano que indica si contrata TV-Cable.
 	 * 
-	 * @return Retorna un nuevo domicilio que será agregado al Titular.
+	 * @return Retorna un nuevo domicilio que serï¿½ agregado al Titular.
 	 * 
 	 * @throws DomicilioRepetidoException si el domicilio ingresa ya existe en este o algun otro Titular.
 	 */
@@ -66,7 +66,7 @@ public class DomicilioFactory {
 	 * <b>pre:</b> El titular del domicilio existe (no es null) al igual que la Empresa. <br>
 	 * <b>post:</b> Retorna verdadero o falso segun si la direccion es repetida o no. <br>
 	 * 
-	 * @param direccion Es la direccion que se buscará en la Empresa.<br>
+	 * @param direccion Es la direccion que se buscarï¿½ en la Empresa.<br>
 	 * 
 	 * @return Retorna un boolean que indica si es una direccion repetida o no.
 	 */
