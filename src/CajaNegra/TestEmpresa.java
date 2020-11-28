@@ -1,4 +1,4 @@
-package test;
+package CajaNegra;
 
 import static org.junit.Assert.*;
 
