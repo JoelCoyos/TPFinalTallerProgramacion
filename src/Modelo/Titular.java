@@ -22,7 +22,7 @@ public abstract class Titular implements Cloneable {
 	protected ArrayList<Domicilio> domicilios = new ArrayList<Domicilio>();
 
     /**
-     *      Crea un titular asignando los siguientes atributos:
+     * Crea un titular asignando los siguientes atributos:
      * @param nombre : String nombre del titular (no valida)
      * @param dni : Entero con el DNI (no valida)
      * @param tipoDePago : String con el tipoDePago (no valida)
