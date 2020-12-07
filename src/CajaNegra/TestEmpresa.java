@@ -29,8 +29,8 @@ public class TestEmpresa {
 		TitularFisico titular = new TitularFisico("Juan", 123456, "Efectivo");
 		Empresa.getInstance().addTitular(titular);
 		ArrayList<Titular> titulares = Empresa.getInstance().getTitualares();
-		assertEquals("Juan", titulares.get(0).getNombre());
-		assertEquals("Se debería haber agregado a la empresa", 123456, titulares.get(0).getDni());
+		System.out.println(titulares.contains(titular));
+		assertEquals("Se debería haber agregado a la empresa",true,titulares.contains(titular));
 	}
 
 	//Se agrega un titular a una empresa con un titular
@@ -39,8 +39,7 @@ public class TestEmpresa {
 		TitularJuridico titular2 = new TitularJuridico("Pedro", 789456, "Efectivo");
 		Empresa.getInstance().addTitular(titular2);
 		ArrayList<Titular> titulares = Empresa.getInstance().getTitualares();
-		assertEquals("Pedro", titulares.get(1).getNombre());
-		assertEquals("Se debería haber agregado a la empresa", 789456, titulares.get(1).getDni());
+		assertEquals("Se debería haber agregado a la empresa",true,titulares.contains(titular2));
 	}
 
 	// Solicita un titular no juridico con un nro de identifacion valido
@@ -51,6 +50,9 @@ public class TestEmpresa {
 		int nroIdent = titular.getNroIdentacion();
 		Titular copia = Empresa.getInstance().solicitaDuplicado(nroIdent);
 		assertEquals("Se tendría que haber duplicado", "Marcos", copia.getNombre());
+		assertEquals("Se tendría que haber duplicado", 123456, copia.getDni());
+		assertEquals("Se tendría que haber duplicado", "Efectivo", copia.getTipo());
+
 
 	}
 
@@ -63,6 +65,11 @@ public class TestEmpresa {
 		Titular copia = Empresa.getInstance().solicitaDuplicado(nroIdent);
 		assertEquals("La copia debería ser null", null, copia);
 
+	}
+	
+	@Test
+	public void testDetalle() {
+		//Empresa.getInstance().detalle();
 	}
 
 }
