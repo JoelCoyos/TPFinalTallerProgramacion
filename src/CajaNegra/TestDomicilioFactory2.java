@@ -6,6 +6,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import Excepciones.DomicilioRepetidoException;
+import Factory.DomicilioFactory;
+import Modelo.Domicilio;
 import Modelo.Empresa;
 import Modelo.Titular;
 
