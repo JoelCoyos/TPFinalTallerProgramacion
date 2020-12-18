@@ -20,6 +20,9 @@ public class TestDomicilioFactory {
 	@Before
 	public void setUp() throws Exception {
 		this.e= Empresa.getInstance();
+		Titular titular= new TitularFisico("Mario Donato",39520966,"Efectivo");
+		titular.addDomicilio("Mitre 455", "Internet100", true, false, true);
+		this.e.addTitular(titular);
 	}
 
 	@After
@@ -33,12 +36,9 @@ public class TestDomicilioFactory {
 	
 	@Test
 	public void testGetDomicilio1() {
-		Titular titular= new TitularFisico("Mario Donato",39520966,"Efectivo");
-		titular.addDomicilio("Mitre 455", "Internet100", true, false, true);
-		this.e.addTitular(titular);
 		try {
-			Domicilio d= DomicilioFactory.getDomicilio("Saavedra 9833", "Internet100", false, false, true);
-			assertEquals("El Domicilio generado no es correcto", "Saavedra 9833", d.getDireccion());
+			Domicilio d= DomicilioFactory.getDomicilio("Gaboto 8168","Internet500",true,false,true);
+			assertEquals("El Domicilio generado no es correcto", "Gaboto 8168", d.getDireccion());
 		} catch (DomicilioRepetidoException e) {
 			fail("No se deberia caer en DomicilioRepetidoException por que el domicilio generado no existia para ningun titular en la empresa");
 		}
@@ -50,11 +50,8 @@ public class TestDomicilioFactory {
 	
 	@Test
 	public void testGetDomicilio2() {
-		Titular titular= new TitularFisico("Marcus Nogueira",40122699,"Efectivo");
-		titular.addDomicilio("San Lorenzo 9652", "Internet500", true, false, true);
-		this.e.addTitular(titular);
 		try {
-			Domicilio d= DomicilioFactory.getDomicilio("San Lorenzo 9652", "Internet100", false, false, true);
+			Domicilio d= DomicilioFactory.getDomicilio("Gaboto 8168","Internet500",true,false,true);
 			fail("No se deberia crear la instancia de domicilio por que ya existe para un titular de una empresa");
 		} catch (DomicilioRepetidoException e) {
 			
