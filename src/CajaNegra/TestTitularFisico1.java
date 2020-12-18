@@ -2,6 +2,7 @@ package CajaNegra;
 
 //DEBERIA TENER UNA COLECCION DE DOMICILIOS LLENA
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import org.junit.After;
@@ -21,6 +22,7 @@ public class TestTitularFisico1 {
 	@Before
 	public void setUp() throws Exception {
 		titularFisico=new TitularFisico("Enzo",40741852,"Tarjeta");
+		titularFisico.addDomicilio("Marconi 1452", "Internet100",true,false,true);
 	}
 
 	@After
@@ -45,7 +47,6 @@ public class TestTitularFisico1 {
 	public void testSetTipoDePago() {
 		titularFisico.setTipoDePago("Efectivo");
 		assertEquals("No se cambió el tipo de pago",titularFisico.getTipoDePago(),"Efectivo");
-		assertEquals("No se cambió el tipo de pago",titularFisico.getTipoDePago(),"Efectivo");
 		titularFisico.setTipoDePago("Cheque");
 		assertEquals("No se cambió el tipo de pago",titularFisico.getTipoDePago(),"Cheque");
 		titularFisico.setTipoDePago("Tarjeta");
@@ -61,26 +62,28 @@ public class TestTitularFisico1 {
 		assertEquals("No se clonó el nombre",titularFisico.getNombre(),clonado.getNombre());
 		assertEquals("No se clonó el DNI",titularFisico.getDni(),clonado.getDni());
 		assertEquals("No se clonó el tipo de pago",titularFisico.getTipoDePago(),clonado.getTipoDePago());
+		assertEquals("No se clonó el domicilio",titularFisico.getDomicilios().get(0).getDireccion(),clonado.getDomicilios().get(0).getDireccion());
+		assertEquals("No se clonó el contrato",titularFisico.getDomicilios().get(0).getContrato(),clonado.getDomicilios().get(0).getContrato());
+
 	}
 	
 	
 	/**
-	 * titularFisico.addDomicilio("Marconi 1452", "Internet100",true,false,true);
-	 * Verifica si el getCosto retorna el valor esperado
+	 * Verifica si el getCosto retorna el valor esperado de la factura de Enzo
 	 */
 	@Test
 	public void testGetCosto1() {
-		titularFisico.addDomicilio("Marconi 1452", "Internet100",true,false,true);
 		assertEquals(1400.00, titularFisico.getCosto(),0);
 	}
 	/**
-	 * titularFisico.addDomicilio("Juan B.Justo 4400", "Internet500",false,true,false)
-	 * Verifica si el getCosto retorna el valor esperado
+	 * Agrego tres domicilios para verificar que el método calcula todo lo esperado
 	 */
 	@Test
 	public void testGetCosto2() {
 		titularFisico.addDomicilio("Juan B.Justo 4400", "Internet500",false,true,false);
-		assertEquals(1200.00, titularFisico.getCosto(),0);
+		titularFisico.addDomicilio("Lopez Planes 87", "Internet100",true,false,true);
+		titularFisico.addDomicilio("Tucuman 2014", "Internet500",true,true,true);
+		assertEquals(5750.00, titularFisico.getCosto(),0);
 	}
 	
 	
@@ -90,7 +93,6 @@ public class TestTitularFisico1 {
 	 */
 	@Test
 	public void testGetCostoFinalEfectivo() {
-		titularFisico.addDomicilio("Marconi 1452", "Internet100",true,false,true);
 		titularFisico.setTipoDePago("Efectivo");
 		assertEquals(1120.00, titularFisico.getCostoFinal(),0);
 	}
@@ -101,38 +103,33 @@ public class TestTitularFisico1 {
 	 */
 	@Test
 	public void testGetCostoFinalCheque() {
-		titularFisico.addDomicilio("Marconi 1452", "Internet100",true,false,true);
 		titularFisico.setTipoDePago("Cheque");
 		assertEquals(1540.00, titularFisico.getCostoFinal(),0);
 	}
 	
 	/**
-	 * El tipo de pago es Tarjeta
+	 * El tipo de pago es Tarjeta, como el tipo de pago original es tarjeta, no cambio su tipo
 	 * Verifica si el getCostoFinal retorna el valor esperado
 	 */
 	@Test
 	public void testGetCostoFinalTarjeta() {
-		titularFisico.addDomicilio("Marconi 1452", "Internet100",true,false,true);
-		titularFisico.setTipoDePago("Tarjeta");
 		assertEquals(1400.00, titularFisico.getCostoFinal(),0);
 	}
 	/**
-	 * Agrego domicilios que no estan en la coleccion de domicilios
+	 * Agrego un domicilio que no esta en la coleccion de domicilios llena
 	 */
 	@Test
 	public void testAddDomicilioNoRepetido() { 
-		titularFisico.addDomicilio("Marconi 1452", "Internet100",true,false,true);
-		assertEquals("No se agregó el domicilio",titularFisico.getDomicilios().get(0).getDireccion(),"Marconi 1452");
 		titularFisico.addDomicilio("Maipu 67", "Internet500",false,true,false);
 		assertEquals("No se agregó el domicilio",titularFisico.getDomicilios().get(1).getDireccion(),"Maipu 67");
 	}
 	/**
 	 * Agrego un domicilio que ya esta en la colección de domicilios
+	 * Uso el tamaño de la coleccion porque sé que hay un solo domicilio
 	 */
 	@Test
 	public void testAddDomicilioRepetido() {
 		titularFisico.addDomicilio("Marconi 1452", "Internet100",true,false,true);
-		titularFisico.addDomicilio("Marconi 1452", "Internet100",true,false,true);
-		fail("agregar domicilio repetido no dispara excepcion.");
+		assertTrue(titularFisico.getDomicilios().size()==1);
 	}
 }

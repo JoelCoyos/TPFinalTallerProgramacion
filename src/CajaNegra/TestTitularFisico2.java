@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import Modelo.TitularFisico;
-//COLECCION DE DOMICILIOS VACIA
+
 public class TestTitularFisico2 {
 
 private TitularFisico titularFisico;
@@ -26,7 +26,7 @@ private TitularFisico titularFisico;
 	}
 
 	/**
-	 * Agrego domicilio que no esta en la coleccion de domicilios
+	 * Agrego domicilio a la coleccion de domicilios vacia
 	 */
 	@Test
 	public void testAddDomicilioNoRepetido() { 

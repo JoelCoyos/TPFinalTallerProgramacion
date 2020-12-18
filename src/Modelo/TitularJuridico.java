@@ -25,16 +25,16 @@ public class TitularJuridico extends Titular {
 	 */
 	@Override
 	public double getCostoFinal() {
-		double respuesta = this.getCosto();
+		double respuesta = this.getCosto(); 
 
-		if (this.tipoDePago.equals("Efectivo"))
-			respuesta -= respuesta * 0.10;
-		else if (this.tipoDePago.equals("Cheque"))
-			respuesta += respuesta * 0.15;
-		else if (this.tipoDePago.equals("Tarjeta"))
-			respuesta += respuesta * 0.20;
+		if (this.tipoDePago.equals("Efectivo")) 
+			respuesta -= respuesta * 0.10; 
+		else if (this.tipoDePago.equals("Cheque")) 
+			respuesta += respuesta * 0.15; 
+		else if (this.tipoDePago.equals("Tarjeta")) 
+			respuesta += respuesta * 0.20; 
 
-		return respuesta;
+		return respuesta; 
 	}
 	
 	/**
