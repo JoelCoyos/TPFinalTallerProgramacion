@@ -146,8 +146,7 @@ public abstract class Titular implements Cloneable {
 	/*
 	 * ---------------
 	 * PATRON TEMPLETE
-	 * ---------------
-	 */
+	 * ---------------	 */
 	public void imprimirFactura() {
 		Iterator<Domicilio> it = this.getDomicilios().iterator();
 		System.out.println("*************************************** FACTURA ***************************************");
