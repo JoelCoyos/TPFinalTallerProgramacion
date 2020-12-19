@@ -12,3 +12,5 @@ Facultad de Ingeniería - Universidad Nacional de Mar del Plata - 2020
 - Joel Coyos
 - Enzo Nogueira Barria
 - Josefina Oller
+
+Las pruebas realizadas de <b>caja negra</b> y <b>caja blanca</b> en JUnit, están en sus respectivos paquetes dentro del directorio /src.
