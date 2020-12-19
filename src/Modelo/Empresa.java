@@ -1,5 +1,7 @@
 package Modelo;
 
+import static org.junit.Assert.assertNotNull;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -25,6 +27,7 @@ public class Empresa {
 	public static Empresa getInstance() {
 		if (instance == null)
 			instance = new Empresa();
+		//assertNotNull("No se cumple la postcondicion de instance != null", instance);
 		return instance;
 	}
 

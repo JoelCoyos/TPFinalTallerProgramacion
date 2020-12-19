@@ -1,5 +1,7 @@
 package Modelo;
 
+import static org.junit.Assert.assertTrue;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -148,6 +150,7 @@ public abstract class Titular implements Cloneable {
 	 * PATRON TEMPLETE
 	 * ---------------	 */
 	public void imprimirFactura() {
+		//assertTrue("No se cumple la precondicion de que haya al menos un domicilio", this.getDomicilios().iterator().hasNext());
 		Iterator<Domicilio> it = this.getDomicilios().iterator();
 		System.out.println("*************************************** FACTURA ***************************************");
 		System.out.println("Cliente Nro:" + this.nroIdentacion);
