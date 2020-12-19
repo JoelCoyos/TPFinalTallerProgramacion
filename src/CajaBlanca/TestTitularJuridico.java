@@ -2,6 +2,8 @@ package CajaBlanca;
 
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,6 +27,7 @@ public class TestTitularJuridico {
 		this.t=null;
 	}
 
+	//Se verifica si getCosto devuelve el valor esperado cuando el tipo de pago es con Efectivo
 	@Test
 	public void testGetCostoFinalEfectivo() {
 		
@@ -34,6 +37,7 @@ public class TestTitularJuridico {
 		assertEquals(765.00, t.getCostoFinal(),0);
 	}
 	
+	//Se verifica si getCosto devuelve el valor esperado cuando el tipo de pago es con Tarjeta
 	@Test
 	public void testGetCostoFinalTarjeta() {
 		
@@ -43,6 +47,7 @@ public class TestTitularJuridico {
 		assertEquals(1020.00, t.getCostoFinal(),0);
 	}
 	
+	//Se verifica si getCosto devuelve el valor esperado cuando el tipo de pago es con Cheque
 	@Test
 	public void testGetCostoFinalCheque() {
 		
@@ -52,6 +57,7 @@ public class TestTitularJuridico {
 		assertEquals(977.50, t.getCostoFinal(),0);
 	}
 	
+	//Se verifica si getCosto devuelve el valor esperado cuando el tipo de pago es con Bono
 	@Test
 	public void testGetCostoFinalBono() {
 		
@@ -60,25 +66,5 @@ public class TestTitularJuridico {
 		this.t.addDomicilio("Colon 1234", "Internet100", false, false, false);
 		assertEquals(850.00, t.getCostoFinal(),0);
 	}
-	/*@Test
-	public void testClone() {
-		
-		//setUP Escenario 1 (del caso de prueba de clone).
-		this.t = new TitularFisico("Juan",41123456,"Cheque");
-		this.t.addDomicilio("Colon 1234", "Internet100", false, false, false);
-		
-		TitularFisico clon = (TitularFisico) this.t.clone();
-		
-		Assert.assertEquals("El nombre no se clonó correctamente.", this.t.getNombre(), clon.getNombre());
-		Assert.assertEquals("El dni no se clonó correctamente.", this.t.getDni(), clon.getDni());
-		Assert.assertEquals("El tipo de pago no se clonó correctamente.", this.t.getTipoDePago(), clon.getTipoDePago());
-		Assert.assertEquals("El domicilio no se clonó correctamente.", this.t.getDomicilios(), clon.getDomicilios());
-		//no se bien como funciona internamente el equals con Arrays, quizas se fija que los elementos sean iguales, y no las referencias.
-		//porque o sea, no me da error, por lo que descartado que compruebe referencias en este caso, creo, porque al clonar, se hacen referencias distintas.
-		//System.out.println(this.t.getDomicilios());
-		//System.out.println(clon.getDomicilios());
-		//ahi probe de ver que me mostraba, y muestra los toString de los Domicilio, quizas compare eso, o sino los atributos en sí.
-	}*/
-
 
 }

@@ -24,6 +24,7 @@ public class TestTitularFisico {
 		this.t = null;
 	}
 	
+	//Se agrega un domicilio a un Titular Fisico
 	@Test
 	public void testAddDomicilio1()
 	{
@@ -33,6 +34,7 @@ public class TestTitularFisico {
 		assertEquals("Independencia 1234", domicilio.getDireccion());
 	}
 	
+	//Se agrega un domicilio repetido a un Titular Fisico
 	@Test
 	public void testAddDomicilio2()
 	{
@@ -42,6 +44,7 @@ public class TestTitularFisico {
 		assertEquals(1, t.getDomicilios().size());
 	}
 	
+	// Se verifica si getCosto devuelve el valor esperado
 	@Test
 	public void testGetCosto1()
 	{
@@ -51,6 +54,7 @@ public class TestTitularFisico {
 		assertEquals(1700, t.getCosto(),0);
 	}
 	
+	//Se verifica si getCosto devuelve el valor esperado cuando el titular no tiene domicilios
 	@Test
 	public void testGetCosto2()
 	{
@@ -58,6 +62,7 @@ public class TestTitularFisico {
 		assertEquals(0, t.getCosto(),0);
 	}
 
+	//Se verifica si getCosto devuelve el valor esperado cuando el tipo de pago es con Efectivo
 	@Test
 	public void testGetCostoFinalEfectivo() {
 		
@@ -67,6 +72,7 @@ public class TestTitularFisico {
 		assertEquals(680.00, t.getCostoFinal(),0);
 	}
 	
+	//Se verifica si getCosto devuelve el valor esperado cuando el tipo de pago es con Tarjeta
 	@Test
 	public void testGetCostoFinalTarjeta() {
 		
@@ -76,6 +82,7 @@ public class TestTitularFisico {
 		assertEquals(850.00, t.getCostoFinal(),0);
 	}
 	
+	//Se verifica si getCosto devuelve el valor esperado cuando el tipo de pago es con Cheque
 	@Test
 	public void testGetCostoFinalCheque() {
 		
@@ -85,6 +92,7 @@ public class TestTitularFisico {
 		assertEquals(935.00, t.getCostoFinal(),0);
 	}
 	
+	//Se prueba que testClone() devuelve el titular Fisico clonado correctamente
 	@Test
 	public void testClone() {
 		
@@ -96,11 +104,6 @@ public class TestTitularFisico {
 		assertEquals("El dni no se clon� correctamente.", this.t.getDni(), clon.getDni());
 		assertEquals("El tipo de pago no se clon� correctamente.", this.t.getTipoDePago(), clon.getTipoDePago());
 		assertEquals("El domicilio no se clon� correctamente.", this.t.getDomicilios(), clon.getDomicilios());
-		//no se bien como funciona internamente el equals con Arrays, quizas se fija que los elementos sean iguales, y no las referencias.
-		//porque o sea, no me da error, por lo que descartado que compruebe referencias en este caso, creo, porque al clonar, se hacen referencias distintas.
-		//System.out.println(this.t.getDomicilios());
-		//System.out.println(clon.getDomicilios());
-		//ahi probe de ver que me mostraba, y muestra los toString de los Domicilio, quizas compare eso, o sino los atributos en s�.
 	}
 
 }

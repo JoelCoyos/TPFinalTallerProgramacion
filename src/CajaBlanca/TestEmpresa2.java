@@ -24,6 +24,7 @@ public class TestEmpresa2 {
 		this.empresa=null;
 	}
 
+	//Se solicita el duplicado de un Titular Fisico
 	@Test
 	public void testSolicitarDuplicado1() {
 		this.empresa= Empresa.getInstance();
