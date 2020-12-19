@@ -11,11 +11,11 @@ import org.junit.Test;
 
 import Modelo.TitularFisico;
 
-public class TestTitularFisico1 {
+public class TestTitularFisicoLleno {
 	
 	private TitularFisico titularFisico;
 	
-	public TestTitularFisico1() {
+	public TestTitularFisicoLleno() {
 	
 	}
 

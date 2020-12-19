@@ -17,7 +17,7 @@ import Modelo.Titular;
  * @author Grupo4
  *
  */
-public class TestDomicilioFactory2 {
+public class TestDomicilioFactoryVacio {
 
 	@Before
 	public void setUp() throws Exception {

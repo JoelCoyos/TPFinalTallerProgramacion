@@ -19,7 +19,7 @@ import Modelo.TitularJuridico;
  * @author Grupo 4
  *
  */
-public class TestDomicilioFactory1 {
+public class TestDomicilioFactoryLleno {
 	
 	
 	private Titular titular1;
