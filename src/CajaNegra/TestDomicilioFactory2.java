@@ -36,8 +36,8 @@ public class TestDomicilioFactory2 {
 	public void testGetDomicilio1() {
 		Domicilio d=null;
 		try {
-			d= DomicilioFactory.getDomicilio("Gaboto 8168","Internet500",true,false,true);
-			assertEquals("El Domicilio generado no es correcto", "Gaboto 8168", d.getDireccion());
+			d= DomicilioFactory.getDomicilio("Independencia 5800","Internet100",true,false,true);
+			assertEquals("El Domicilio generado no es correcto", "Independencia 5800", d.getDireccion());
 		} catch (DomicilioRepetidoException e) {
 			fail("No se deberia caer en DomicilioRepetidoException por que el domicilio generado no existia para ningun titular en la empresa");
 		}
