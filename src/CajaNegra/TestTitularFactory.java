@@ -7,7 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import Factory.TitularFactory;
-import junit.framework.Assert;
 import Modelo.Titular;
 
 public class TestTitularFactory {
@@ -40,10 +39,10 @@ public class TestTitularFactory {
 		//TitularFisico t = (TitularFisico) TitularFactory.getTitular(tipo, nombre, dni, tipoDePago);
 		//AA sisi tenia un .getTipo jeje
 		Titular t = TitularFactory.getTitular(tipo, nombre, dni, tipoDePago);
-		Assert.assertEquals("No se asignó correctamente el tipo del Titular", tipo, t.getTipo());
-		Assert.assertEquals("No se asignó correctamente el nombre del Titular", nombre, t.getNombre());
-		Assert.assertEquals("No se asignó correctamente el dni del Titular", dni, t.getDni());
-		Assert.assertEquals("No se asignó correctamente el tipoDePago del Titular", tipoDePago, t.getTipoDePago());
+		assertEquals("No se asignó correctamente el tipo del Titular", tipo, t.getTipo());
+		assertEquals("No se asignó correctamente el nombre del Titular", nombre, t.getNombre());
+		assertEquals("No se asignó correctamente el dni del Titular", dni, t.getDni());
+		assertEquals("No se asignó correctamente el tipoDePago del Titular", tipoDePago, t.getTipoDePago());
 		//Nota: podemos usar métodos de otras clases porque previamente ya fueron testeados
 		//(en este caso los metodos de Titular)
 		//(por eso el enunciado del tp dice que empecemos testeando las clases más atómicas)
@@ -58,10 +57,10 @@ public class TestTitularFactory {
 		String tipoDePago = "Cheque";
 		
 		Titular t = TitularFactory.getTitular(tipo, nombre, dni, tipoDePago);
-		Assert.assertEquals("No se asignó correctamente el tipo del Titular", tipo, t.getTipo());
-		Assert.assertEquals("No se asignó correctamente el nombre del Titular", nombre, t.getNombre());
-		Assert.assertEquals("No se asignó correctamente el dni del Titular", dni, t.getDni());
-		Assert.assertEquals("No se asignó correctamente el tipoDePago del Titular", tipoDePago, t.getTipoDePago());
+		assertEquals("No se asignó correctamente el tipo del Titular", tipo, t.getTipo());
+		assertEquals("No se asignó correctamente el nombre del Titular", nombre, t.getNombre());
+		assertEquals("No se asignó correctamente el dni del Titular", dni, t.getDni());
+		assertEquals("No se asignó correctamente el tipoDePago del Titular", tipoDePago, t.getTipoDePago());
 		
 	}
 	
@@ -74,10 +73,10 @@ public class TestTitularFactory {
 		String tipoDePago = "Tarjeta";
 		
 		Titular t = TitularFactory.getTitular(tipo, nombre, dni, tipoDePago);
-		Assert.assertEquals("No se asignó correctamente el tipo del Titular", tipo, t.getTipo());
-		Assert.assertEquals("No se asignó correctamente el nombre del Titular", nombre, t.getNombre());
-		Assert.assertEquals("No se asignó correctamente el dni del Titular", dni, t.getDni());
-		Assert.assertEquals("No se asignó correctamente el tipoDePago del Titular", tipoDePago, t.getTipoDePago());
+		assertEquals("No se asignó correctamente el tipo del Titular", tipo, t.getTipo());
+		assertEquals("No se asignó correctamente el nombre del Titular", nombre, t.getNombre());
+		assertEquals("No se asignó correctamente el dni del Titular", dni, t.getDni());
+		assertEquals("No se asignó correctamente el tipoDePago del Titular", tipoDePago, t.getTipoDePago());
 		
 	}
 	
@@ -90,10 +89,10 @@ public class TestTitularFactory {
 		String tipoDePago = "Efectivo";
 		
 		Titular t = TitularFactory.getTitular(tipo, nombre, dni, tipoDePago);
-		Assert.assertEquals("No se asignó correctamente el tipo del Titular", tipo, t.getTipo());
-		Assert.assertEquals("No se asignó correctamente el nombre del Titular", nombre, t.getNombre());
-		Assert.assertEquals("No se asignó correctamente el dni del Titular", dni, t.getDni());
-		Assert.assertEquals("No se asignó correctamente el tipoDePago del Titular", tipoDePago, t.getTipoDePago());
+		assertEquals("No se asignó correctamente el tipo del Titular", tipo, t.getTipo());
+		assertEquals("No se asignó correctamente el nombre del Titular", nombre, t.getNombre());
+		assertEquals("No se asignó correctamente el dni del Titular", dni, t.getDni());
+		assertEquals("No se asignó correctamente el tipoDePago del Titular", tipoDePago, t.getTipoDePago());
 		
 	}
 	
@@ -106,10 +105,10 @@ public class TestTitularFactory {
 		String tipoDePago = "Cheque";
 		
 		Titular t = TitularFactory.getTitular(tipo, nombre, dni, tipoDePago);
-		Assert.assertEquals("No se asignó correctamente el tipo del Titular", tipo, t.getTipo());
-		Assert.assertEquals("No se asignó correctamente el nombre del Titular", nombre, t.getNombre());
-		Assert.assertEquals("No se asignó correctamente el dni del Titular", dni, t.getDni());
-		Assert.assertEquals("No se asignó correctamente el tipoDePago del Titular", tipoDePago, t.getTipoDePago());
+		assertEquals("No se asignó correctamente el tipo del Titular", tipo, t.getTipo());
+		assertEquals("No se asignó correctamente el nombre del Titular", nombre, t.getNombre());
+		assertEquals("No se asignó correctamente el dni del Titular", dni, t.getDni());
+		assertEquals("No se asignó correctamente el tipoDePago del Titular", tipoDePago, t.getTipoDePago());
 		
 	}
 	
@@ -122,10 +121,10 @@ public class TestTitularFactory {
 		String tipoDePago = "Tarjeta";
 		
 		Titular t = TitularFactory.getTitular(tipo, nombre, dni, tipoDePago);
-		Assert.assertEquals("No se asignó correctamente el tipo del Titular", tipo, t.getTipo());
-		Assert.assertEquals("No se asignó correctamente el nombre del Titular", nombre, t.getNombre());
-		Assert.assertEquals("No se asignó correctamente el dni del Titular", dni, t.getDni());
-		Assert.assertEquals("No se asignó correctamente el tipoDePago del Titular", tipoDePago, t.getTipoDePago());
+		assertEquals("No se asignó correctamente el tipo del Titular", tipo, t.getTipo());
+		assertEquals("No se asignó correctamente el nombre del Titular", nombre, t.getNombre());
+		assertEquals("No se asignó correctamente el dni del Titular", dni, t.getDni());
+		assertEquals("No se asignó correctamente el tipoDePago del Titular", tipoDePago, t.getTipoDePago());
 		
 	}
 	
@@ -138,10 +137,10 @@ public class TestTitularFactory {
 		String tipoDePago = "Tarjeta";
 		
 		Titular t = TitularFactory.getTitular(tipo, nombre, dni, tipoDePago);
-		Assert.assertEquals("No se asignó correctamente el tipo del Titular", tipo, t.getTipo());
-		Assert.assertEquals("No se asignó correctamente el nombre del Titular", nombre, t.getNombre());
-		Assert.assertEquals("No se asignó correctamente el dni del Titular", dni, t.getDni());
-		Assert.assertEquals("No se asignó correctamente el tipoDePago del Titular", tipoDePago, t.getTipoDePago());
+		assertEquals("No se asignó correctamente el tipo del Titular", tipo, t.getTipo());
+		assertEquals("No se asignó correctamente el nombre del Titular", nombre, t.getNombre());
+		assertEquals("No se asignó correctamente el dni del Titular", dni, t.getDni());
+		assertEquals("No se asignó correctamente el tipoDePago del Titular", tipoDePago, t.getTipoDePago());
 		
 	}
 
