@@ -38,14 +38,10 @@ public class TestDomicilio {
 		
 		this.domicilio = new Domicilio(direccion, contrato);
 		
-		Assert.assertEquals("El atributo direccion no se inicializó correctamente.", direccion, this.domicilio.getDireccion());
-		Assert.assertEquals("El atributo contrato no se inicializó correctamente.", contrato, this.domicilio.getContrato());
+		assertEquals("El atributo direccion no se inicializó correctamente.", direccion, this.domicilio.getDireccion());
+		assertEquals("El atributo contrato no se inicializó correctamente.", contrato, this.domicilio.getContrato());
 		//verificamos que la referencia de 'contrato' sea la misma que se guardo en el atributo de 'domicilio'.
 		
-		//System.out.println(contrato);
-		//System.out.println(this.domicilio.getContrato());
-		//System.out.println(contrato.getClass());
-		//System.out.println(this.domicilio.getContrato().getClass());
 	}
 	
 	@Test
@@ -56,8 +52,8 @@ public class TestDomicilio {
 		
 		this.domicilio = new Domicilio(direccion, contrato);
 		
-		Assert.assertEquals("El atributo direccion no se inicializó correctamente.", direccion, this.domicilio.getDireccion());
-		Assert.assertEquals("El atributo contrato no se inicializó correctamente.", contrato, this.domicilio.getContrato());
+		assertEquals("El atributo direccion no se inicializó correctamente.", direccion, this.domicilio.getDireccion());
+		assertEquals("El atributo contrato no se inicializó correctamente.", contrato, this.domicilio.getContrato());
 	}
 	
 	@Test
@@ -68,8 +64,8 @@ public class TestDomicilio {
 		
 		this.domicilio = new Domicilio(direccion, contrato);
 		
-		Assert.assertEquals("El atributo direccion no se inicializó correctamente.", direccion, this.domicilio.getDireccion());
-		Assert.assertEquals("El atributo contrato no se inicializó correctamente.", contrato, this.domicilio.getContrato());
+		assertEquals("El atributo direccion no se inicializó correctamente.", direccion, this.domicilio.getDireccion());
+		assertEquals("El atributo contrato no se inicializó correctamente.", contrato, this.domicilio.getContrato());
 	}
 	
 	@Test
@@ -80,8 +76,8 @@ public class TestDomicilio {
 		
 		this.domicilio = new Domicilio(direccion, contrato);
 		
-		Assert.assertEquals("El atributo direccion no se inicializó correctamente.", direccion, this.domicilio.getDireccion());
-		Assert.assertEquals("El atributo contrato no se inicializó correctamente.", contrato, this.domicilio.getContrato());
+		assertEquals("El atributo direccion no se inicializó correctamente.", direccion, this.domicilio.getDireccion());
+		assertEquals("El atributo contrato no se inicializó correctamente.", contrato, this.domicilio.getContrato());
 	}
 	
 	@Test
@@ -92,8 +88,8 @@ public class TestDomicilio {
 		
 		this.domicilio = new Domicilio(direccion, contrato);
 		
-		Assert.assertEquals("El atributo direccion no se inicializó correctamente.", direccion, this.domicilio.getDireccion());
-		Assert.assertEquals("El atributo contrato no se inicializó correctamente.", contrato, this.domicilio.getContrato());
+		assertEquals("El atributo direccion no se inicializó correctamente.", direccion, this.domicilio.getDireccion());
+		assertEquals("El atributo contrato no se inicializó correctamente.", contrato, this.domicilio.getContrato());
 	}
 
 }
